@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://6mngi51sxx2j"]
+
+[ext_resource type="PackedScene" uid="uid://dvb1nnf08m20f" path="res://iso_camera.tscn" id="1_vcuj3"]
+[ext_resource type="PackedScene" uid="uid://012q553ovyc7" path="res://player.tscn" id="2_opirm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n40fo"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ens2y"]
+size = Vector3(20, 1, 20)
+
+[node name="TestingLevel" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.816138, 0, 0.577858, 0, 1, 0, -0.577858, 0, 0.816138, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_n40fo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ens2y")
+
+[node name="IsoCamera" parent="." instance=ExtResource("1_vcuj3")]
+
+[node name="player" parent="." instance=ExtResource("2_opirm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95637, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943512, 0.331338, 0, -0.331338, 0.943512, -0.0467949, 3.84365, 0.0607452)

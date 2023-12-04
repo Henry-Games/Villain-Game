@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvb1nnf08m20f"]
+
+[ext_resource type="Script" path="res://iso_camera_script.cs" id="1_v44es"]
+
+[node name="IsoCamera" type="Camera3D"]
+script = ExtResource("1_v44es")
